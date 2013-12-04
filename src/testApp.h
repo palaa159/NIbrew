@@ -25,11 +25,37 @@ public:
     void userEvent(ofxOpenNIUserEvent & event);
     
 	ofxOpenNI openNIDevice;
+    // me
+    ofPoint head;
+    ofPoint leftHand;
+    ofPoint rightHand;
+    ofPoint leftFoot;
+    ofPoint rightFoot;
+    // you
+    ofPoint o_head;
+    ofPoint o_leftHand;
+    ofPoint o_rightHand;
+    ofPoint o_leftFoot;
+    ofPoint o_rightFoot;
+    
+    
+    int array_size;
+    int a;
+    int b,c,CX1,CY1,CX2,CY2;
+    ofSoundPlayer   re;
+    ofSoundPlayer   so;
+    ofSoundPlayer   la,Do,Do2,Mi;
+    ofImage bg;
+    
+    int nCurveVertices;
     
     ofTrueTypeFont verdana;
     
     // create your spacebrew object
     Spacebrew::Connection spacebrew;
+    void onMessage( Spacebrew::Message & msg );
+    
+    
     
 };
 
