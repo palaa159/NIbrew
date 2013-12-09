@@ -3,6 +3,7 @@
 
 #include "ofxOpenNI.h"
 #include "ofMain.h"
+#include "oscillator.h"
 #import "ofxSpacebrew.h"
 
 class testApp : public ofBaseApp{
@@ -42,10 +43,10 @@ public:
     int array_size;
     int a;
     int b,c,CX1,CY1,CX2,CY2;
-    ofSoundPlayer   re;
-    ofSoundPlayer   so;
-    ofSoundPlayer   la,Do,Do2,Mi;
-    ofImage bg;
+    ofSoundPlayer   yi;
+    ofSoundPlayer   er,chang1,chang2,chang3,gugu,star;
+    ofSoundPlayer   san,si,wu,liu,Mi;
+    ofImage bg,life;
     
     int nCurveVertices;
     
@@ -54,9 +55,24 @@ public:
     // create your spacebrew object
     Spacebrew::Connection spacebrew;
     void onMessage( Spacebrew::Message & msg );
+    int R,G,B;
+    ofTrueTypeFont	verdana14A;
     
+    // for oscillator
+    void audioOut(float * input, int bufferSize, int nChannels);
     
+    ofSoundStream stream;
     
+    float * soundBuffer;
+    
+    oscillator sinWave;
+    
+    // for shape
+    ofPolyline bShape;
+    float bShape_area;
+    
+    vector<int> noteFreq;
+    int noteIndex;
 };
 
 #endif
